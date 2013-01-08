@@ -1,0 +1,72 @@
+<%inc admin/header.tmpl%>
+<section>
+	<div class="page-header">
+	<h1>新建内容 <small>新建新闻、页面和产品等</small></h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+            <fieldset>
+                <legend><%form_title%></legend>
+                <form class="form-horizontal" method="post">
+					<input type="hidden" name="node_id" value="<%node_id%>" />
+					<div class="control-group">
+						<label class="control-label" for="type">类型</label>
+						<div class="controls">
+							<select id="type" name="type" class="input-medium">
+								<%type_option%>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="title">标题</label>
+						<div class="controls">
+							<input type="text" class="input-large" id="title" name="title" value="<%title%>" required="required" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="snapshot">缩略图</label>
+						<div class="controls">
+							<div class="input-append">
+								<input type="text" id="snapshot" name="snapshot" class="input-medium" value="<%snapshot%>" />
+								<button class="btn" type="button" data-toggle="modal" href="#img_dialog">选择</button>
+							</div>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="content">内容</label>
+						<div class="controls">
+							<textarea id="content" name="content" style="width:100%" rows="20"><%content%></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">选项</label>
+						<div class="controls">
+							<label class="checkbox">
+							<input type="checkbox" name="status" value="Y" <%status%> />
+							马上发布
+							</label>
+							<label class="checkbox">
+							<input type="checkbox" name="comment_enabled" value="Y" <%comment_enabled%> />
+							允许评论
+							</label>
+							<label class="checkbox">
+							<input type="checkbox" name="comment_display" value="Y" <%comment_display%> />
+							显示评论
+							</label>
+							<label class="checkbox">
+							<input type="checkbox" name="top" value="Y" <%top%> />
+							置顶
+							</label>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">保存</button>
+						<a href="./admin_node" class="btn">取消</a>
+					</div>
+				</form>
+			</fieldset>
+		</div>
+	</div>
+</section>
+<%inc admin/attachment_dialog.tmpl%>
+<%inc admin/footer.tmpl%>

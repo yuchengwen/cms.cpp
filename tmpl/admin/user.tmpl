@@ -1,0 +1,70 @@
+<%inc admin/header.tmpl%>
+<div style="display:<%error_display%>" class="alert alert-error">
+	<a class="close" data-dismiss="alert">&times;</a>
+	<strong>错误:</strong> <%error_msg%>
+</div>
+<section>
+	<div class="page-header">
+	<h1>用户管理 <small>管理后台用户</small></h1>
+	</div>
+	<div class="row">
+		<div class="span8">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>ID</th><th>用户名</th><th>昵称</th><th>创建时间</th><th>上次登陆时间</th><th>上次登陆IP</th><th>状态</th><th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%user_list%>
+			</tbody>
+		</table>
+		</div>
+		<div class="span4">
+			<form method="post" class="form-horizontal">
+				<fieldset>
+					<legend><%form_title%></legend>
+					<input type="hidden" name="user_id" value="<%user_id%>" />
+					<div class="control-group">
+						<label class="control-label" for="username">用户名</label>
+						<div class="controls">
+							<input id="username" name="username" type="text" value="<%username%>" class="input-medium" required="required" placeholder="字母或数字" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password">密码</label>
+						<div class="controls">
+							<input id="password" name="password" type="password" value="<%password%>" class="input-medium" required="required" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="confirm">确认密码</label>
+						<div class="controls">
+							<input type="password" class="input-medium" id="confirm" value="<%password%>" required="required" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="nickname">昵称</label>
+						<div class="controls">
+							<input id="nickname" name="nickname" type="text" value="<%nickname%>" class="input-medium" required="required" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="status">状态</label>
+						<div class="controls">
+							<label class="checkbox">
+							<input name="status" type="checkbox" value="Y" <%status%> />
+							启用
+							</label>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">保存</button>
+						<a href="./admin_user" class="btn">取消</a>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+<%inc admin/footer.tmpl%>

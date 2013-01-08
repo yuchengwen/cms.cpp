@@ -1,0 +1,79 @@
+﻿<%inc admin/header.tmpl%>
+<div style="display:<%error_display%>" class="alert alert-error">
+	<a class="close" data-dismiss="alert">&times;</a>
+	<strong>错误:</strong> <%error_msg%>
+</div>
+<section>
+	<div class="page-header">
+	<h1>类型管理 <small>设置节点类型和分组</small></h1>
+	</div>
+	<div class="row">
+		<div class="span8">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>ID</th><th>分组名称</th><th>所属类型</th><th>父组</th><th>状态</th><th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%type_list%>
+			</tbody>
+		</table>
+		</div>
+		<div class="span4">
+			<form method="post" class="form-horizontal">
+				<fieldset>
+					<legend><%form_title%></legend>
+					<input type="hidden" name="type_id" value="<%type_id%>" />
+					<div class="control-group">
+						<label class="control-label" for="type_name">名称</label>
+						<div class="controls">
+							<input type="text" class="input-medium" id="type_name" name="type_name" value="<%type_name%>" required="required" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="snapshot">缩略图</label>
+						<div class="controls">
+							<div class="input-append">
+							<input type="text" id="snapshot" name="snapshot" class="input-medium" value="<%snapshot%>" />
+							<button class="btn" type="button" data-toggle="modal" href="#img_dialog">选择</button>
+							</div>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="type">节点类型</label>
+						<div class="controls">
+							<select id="type" name="type" class="input-medium">
+								<%type_option%>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="parent">父组</label>
+						<div class="controls">
+							<select id="parent" name="parent" class="input-medium">
+								<option value="-1">请选择</option>
+								<%parent_option%>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="status">状态</label>
+						<div class="controls">
+							<label class="checkbox">
+							<input type="checkbox" name="status" value="Y" <%status%> />
+							启用
+							</label>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">保存</button>
+						<a href="./admin_type" class="btn">取消</a>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+<%inc admin/attachment_dialog.tmpl%>
+<%inc admin/footer.tmpl%>

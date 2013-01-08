@@ -1,0 +1,56 @@
+<%inc admin/header.tmpl%>
+<section>
+	<div class="page-header">
+	<h1>网站设置 <small>设置网站的各种参数</small></h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+            <form method="post" class="form-horizontal">
+                <fieldset>
+                    <legend>站点属性</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="title">网站名</label>
+                        <div class="controls">
+                            <input type="text" id="title" name="title" value="<%setting_title%>" required="required" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="logo">Logo</label>
+                        <div class="controls">
+                            <div class="input-append">
+                            <input type="text" id="snapshot" name="logo" value="<%setting_logo%>" class="input-medium" required="required" />
+                            <button class="btn" type="button" data-toggle="modal" href="#img_dialog">选择</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="key_word">搜索引擎关键字</label>
+                        <div class="controls">
+                            <input type="text" id="keywords" name="keywords" value="<%setting_keywords%>" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="description">页面描述</label>
+                        <div class="controls">
+                            <input type="text" id="description" name="description" value="<%setting_description%>" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                            <input type="checkbox" id="anyone_comment" value="Y" />
+                            允许匿名评论
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">保存</button>
+                        <a href="./admin_setting" class="btn">取消</a>
+                    </div>
+                </fieldset>
+            </form>
+		</div><!--span12-->
+	</div>
+</section>
+<%inc admin/attachment_dialog.tmpl%>
+<%inc admin/footer.tmpl%>

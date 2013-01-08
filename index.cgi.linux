@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+
+$ENV{'LD_LIBRARY_PATH'} = ".:$ENV{'LD_LIBRARY_PATH'}";
+
+$ENV{'DATABASE_HOST'} = "76.162.254.189";
+$ENV{'DATABASE_NAME'} = "C336856_dykee";
+$ENV{'DATABASE_USER'} = "C336856_Tracy";
+$ENV{'DATABASE_PASSWORD'} = "T4kdY6C4IN1f";
+$ENV{'DATABASE_PORT'} = "3306";
+
+print `./cmscpp`;

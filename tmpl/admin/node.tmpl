@@ -1,0 +1,56 @@
+<%inc admin/header.tmpl%>
+<section>
+	<div class="page-header">
+	<h1>内容管理 <small>新闻、页面和产品等管理</small></h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+		<form class="well form-inline">
+			<input type="text" class="input-medium" name="key_word" value="<%key_word%>" placeholder="标题关键字" />
+			<select name="type" class="input-medium">
+				<option value="-1">请选择</option>
+				<%type_option%>
+			</select>
+			<select name="author" class="input-medium">
+				<option value="-1">请选择</option>
+				<%user_option%>
+			</select>
+			<label class="checkbox">
+				<input type="checkbox" name="disabled" value="1" <%disabled%> /> 未发布
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" name="enabled" value="1" <%enabled%> /> 已发布
+			</label>
+			<button type="submit" class="btn">过滤显示</button>
+			<a href="./admin_node_modify" class="btn btn-primary pull-right">新建</a>
+		</form>
+		</div>
+		<div class="span12">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>ID</th><th>标题</th><th>分组</th><th>作者</th><th>创建时间</th><th>状态</th><th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%node_list%>
+			</tbody>
+		</table>
+		<ul class="pager">
+			<li>
+				<a href="?page=1">第一页</a>
+			</li>
+			<li>
+				<a href="?page=<%preview_page%>">上一页</a>
+			</li>
+			<li>
+				<a href="?page=<%next_page%>">下一页</a>
+			</li>
+			<li>
+				<a href="?page=<%last_page%>">最后一页</a>
+			</li>
+		</ul>
+		</div>
+	</div>
+</section>
+<%inc admin/footer.tmpl%>

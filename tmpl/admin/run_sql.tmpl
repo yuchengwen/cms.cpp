@@ -1,0 +1,30 @@
+<%inc admin/header.tmpl%>
+<section>
+	<div class="page-header">
+	<h1>数据库管理 <small>执行SQL语句</small></h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+            <div class="alert alert-error">
+                <a class="close" data-dismiss="alert">&times;</a>
+                <strong>危险:</strong> 执行SQL语句可能导致网站崩溃，请谨慎操作
+            </div>
+            <form method="post" class="form-horizontal">
+                <fieldset>
+                    <legend>执行SQL</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="sql">SQL</label>
+                        <div class="controls">
+                        <textarea id="sql" name="sql" rows="10" style="width:80%"><%sql_result%></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" onclick="return confirm('执行SQL语句？');">执行</button>
+                        <a href="./admin_run_sql" class="btn"  onclick="return confirm('取消？');">取消</a>
+                    </div>
+                </fieldset>
+            </form>
+		</div><!--span12-->
+	</div>
+</section>
+<%inc admin/footer.tmpl%>

@@ -1,0 +1,60 @@
+<%inc admin/header.tmpl%>
+<section>
+	<div class="page-header">
+	<h1>评论管理 <small>评论查看，审核，删除等</small></h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+		<form class="well form-inline">
+			<input type="text" class="input-medium" name="key" placeholder="关键字" />
+			<label class="checkbox">
+				<input type="checkbox" name="disabled" value="1" />
+				未审核
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" name="enabled" value="1" />
+				已审核
+			</label>
+			<button type="submit" class="btn">过滤显示</button>
+		</form>
+		</div>
+		<div class="span12">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>ID</th><th>内容</th><th>作者</th><th>发布时间</th><th>状态</th><th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td><td>text 测试 测试 测试 测试 测试 测试 测试</td><td>yu0736@live.com</td><td>2012-12-03 11:23:42</td><td><span class="label label-success">已发布</span></td>
+					<td>
+					<div class="btn-group">
+						<a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">操作<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">取消审核</a></li>
+							<li><a href="#">编辑</a></li>
+							<li><a href="#">删除</a></li>
+							<li><a href="#">查看</a></li>
+						</ul>
+					</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6">
+						<ul class="pager">
+							<li>
+								<a href="#">上一页</a>
+							</li>
+							<li>
+								<a href="#">下一页</a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>
+</section>
+<%inc admin/footer.tmpl%>

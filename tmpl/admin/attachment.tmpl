@@ -1,0 +1,62 @@
+<%inc admin/header.tmpl%>
+<div style="display:<%error_display%>" class="alert alert-error">
+	<a class="close" data-dismiss="alert">&times;</a>
+	<strong>错误:</strong> <%error_msg%>
+</div>
+<section>
+	<div class="page-header">
+	<h1>附件管理 <small>上传或删除图片等附件</small></h1>
+	</div>
+	<div class="row">
+		<div class="span8">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>ID</th><th>名称</th><th>链接地址</th><th>大小(KB)</th><th>上传时间</th><th>上传者</th><th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%file_list%>
+			</tbody>
+		</table>
+		<ul class="pager">
+			<li>
+				<a href="?page=1">第一页</a>
+			</li>
+			<li>
+				<a href="?page=<%preview_page%>">上一页</a>
+			</li>
+			<li>
+				<a href="?page=<%next_page%>">下一页</a>
+			</li>
+			<li>
+				<a href="?page=<%last_page%>">最后一页</a>
+			</li>
+		</ul>
+		</div>
+		<div class="span4">
+			<form method="post" enctype="multipart/form-data" class="form-horizontal">
+				<fieldset>
+					<legend>上传附件</legend>
+					<div class="control-group">
+						<label class="control-label" for="description">名称</label>
+						<div class="controls">
+							<input type="text" class="input-medium" id="description" name="description" required="required" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="file">附件</label>
+						<div class="controls">
+							<input type="file" class="input-file input-medium" id="file" name="file" required="required" />
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">保存</button>
+						<button type="reset" class="btn">取消</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+<%inc admin/footer.tmpl%>

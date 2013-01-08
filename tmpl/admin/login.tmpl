@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Tkine CMS Admin</title>
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<script type="text/javascript" src="/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#login_dialog').modal({
+				backdrop:false,
+				keyboard:false,
+				show:true
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<div class="modal" id="login_dialog">
+			<div class="modal-header">
+				<h3>请登录</h3>
+			</div>
+			<form method="post" class="form-horizontal">
+				<div class="modal-body">
+          <div style="display:<%error_display%>" class="alert alert-error">
+            <a class="close" data-dismiss="alert">&times;</a>
+            <strong>错误:</strong> <%error_msg%>
+          </div>
+					<fieldset>
+						<div class="control-group">
+							<label class="control-label" for="username">用户名</label>
+							<div class="controls">
+								<input type="text" class="input-medium" id="username" name="username" required="required" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="password">密码</label>
+							<div class="controls">
+								<input type="password" class="input-medium" id="password" name="password" required="required" />
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<label class="checkbox">
+								<input type="checkbox" id="remeber" name="remeber" value="1" />
+								记住密码
+								</label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="modal-footer">
+          <button type="submit" class="btn btn-primary">登录</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

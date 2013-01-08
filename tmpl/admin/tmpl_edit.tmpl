@@ -1,0 +1,48 @@
+<%inc admin/header.tmpl%>
+<section>
+	<div class="page-header">
+	<h1>模板编辑 <small>编辑前端HTML模板</small></h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+            <div class="alert alert-error">
+                <a class="close" data-dismiss="alert">&times;</a>
+                <strong>危险:</strong> 编辑模版可能导致网页不能正常显示，请谨慎操作
+            </div>
+            <form method="post" class="form-horizontal">
+                <fieldset>
+                    <legend>编辑模版文件 
+                        <small>
+                            <a href="?file=header"><i class="icon-file"></i> 页头</a>
+                            <a href="?file=footer"><i class="icon-file"></i> 页尾</a>
+                            <a href="?file=index"><i class="icon-file"></i> 主页</a>
+                            <a href="?file=side_product_type"><i class="icon-file"></i> 产品类型</a>
+                            <a href="?file=side_last_article"><i class="icon-file"></i> 最新文章</a>
+                            <a href="?file=side_last_product"><i class="icon-file"></i> 最新产品</a>
+                            <a href="?file=node_list"><i class="icon-file"></i> 内容列表</a>
+                            <a href="?file=node"><i class="icon-file"></i> 内容页</a>
+                            <a href="?file=node_page"><i class="icon-file"></i> 静态内容页</a>
+                        </small>
+                    </legend>
+                    <div class="control-group">
+                        <label class="control-label" for="tmpl_name">文件</label>
+                        <div class="controls">
+                            <input type="text" id="tmpl_name" name="tmpl_name" readonly="readonly" value="<%tmpl_name%>" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="content">内容</label>
+                        <div class="controls">
+                        <textarea id="content" name="content" rows="30" style="width:90%"><%tmpl_content%></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" onclick="return confirm('保存文件？');">保存</button>
+                        <a href="./admin_tmpl_edit" class="btn"  onclick="return confirm('放弃修改？');">取消</a>
+                    </div>
+                </fieldset>
+            </form>
+		</div><!--span12-->
+	</div>
+</section>
+<%inc admin/footer.tmpl%>

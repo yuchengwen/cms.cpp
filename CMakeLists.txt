@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.6)
+project(cmscpp)
+include_directories(. ../cgi.cpp include/mysql)
+aux_source_directory(. SRC_LIST)
+aux_source_directory(admin ADMIN_SRC_LIST)
+add_executable(cmscpp ${SRC_LIST} ${ADMIN_SRC_LIST})
+link_directories(lib)
+target_link_libraries(cmscpp cgicpp libmysql)

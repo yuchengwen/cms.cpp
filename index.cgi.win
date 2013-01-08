@@ -1,0 +1,9 @@
+#!"\xampp\perl\bin\perl.exe"
+
+$ENV{'DATABASE_HOST'} = "127.0.0.1";
+$ENV{'DATABASE_NAME'} = "tkcms";
+$ENV{'DATABASE_USER'} = "root";
+$ENV{'DATABASE_PASSWORD'} = "";
+$ENV{'DATABASE_PORT'} = "3306";
+
+print `cmscpp.exe`;
